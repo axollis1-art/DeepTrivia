@@ -1,0 +1,4 @@
+let csrf='';
+export class ApiError extends Error {constructor(message:string,public status=0){super(message);}}
+export async function connect(){const data=await api('/session');csrf=data.csrf;return data;}
+export async function api(path:string,body?:unknown){let res:Response;try{res=await fetch(`/api${path}`,{method:body===undefined?'GET':'POST',credentials:'same-origin',headers:body===undefined?{}:{'Content-Type':'application/json','X-CSRF-Token':csrf},body:body===undefined?undefined:JSON.stringify(body)});}catch{throw new ApiError('You appear to be offline. Reconnect and retry to check your saved progress.');}let data;try{data=await res.json();}catch{throw new ApiError('The dive service is unavailable. Retry when it is back online.',res.status);}if(!res.ok)throw new ApiError(data.error??'We couldn’t complete that action. Please retry.',res.status);return data;}

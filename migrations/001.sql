@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS schema_versions(version INTEGER PRIMARY KEY);
+INSERT OR IGNORE INTO schema_versions VALUES(1);
+CREATE TABLE IF NOT EXISTS sessions(id TEXT PRIMARY KEY, csrf TEXT NOT NULL, created INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS content_versions(id TEXT PRIMARY KEY, snapshot TEXT NOT NULL, created INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS runs(id TEXT PRIMARY KEY, session_id TEXT NOT NULL REFERENCES sessions(id), mode TEXT NOT NULL, relaxed INTEGER NOT NULL, snapshot TEXT NOT NULL, categories TEXT NOT NULL, recent TEXT NOT NULL, cycled INTEGER NOT NULL, complete INTEGER NOT NULL DEFAULT 0, created INTEGER NOT NULL);
+CREATE INDEX IF NOT EXISTS idx_runs_session ON runs(session_id);
+CREATE TABLE IF NOT EXISTS rounds(run_id TEXT NOT NULL REFERENCES runs(id), round_index INTEGER NOT NULL, start INTEGER NOT NULL, reading_until INTEGER NOT NULL, deadline INTEGER, submission_id TEXT, received INTEGER, raw_input TEXT, outcome TEXT, PRIMARY KEY(run_id,round_index));
+CREATE TABLE IF NOT EXISTS challenges(id TEXT PRIMARY KEY, created INTEGER NOT NULL, expires INTEGER NOT NULL, scoring_version TEXT NOT NULL, rules TEXT NOT NULL, snapshot TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS participants(challenge_id TEXT NOT NULL REFERENCES challenges(id), role TEXT NOT NULL CHECK(role IN ('creator','friend')), session_id TEXT NOT NULL REFERENCES sessions(id), nickname TEXT NOT NULL, run_id TEXT NOT NULL UNIQUE REFERENCES runs(id), joined INTEGER NOT NULL, completed INTEGER, PRIMARY KEY(challenge_id,role), UNIQUE(challenge_id,session_id));
+CREATE INDEX IF NOT EXISTS idx_participants_session ON participants(session_id,challenge_id);
+CREATE TABLE IF NOT EXISTS missing_reports(id TEXT PRIMARY KEY, session_id TEXT NOT NULL, prompt_id TEXT NOT NULL, prompt_version INTEGER NOT NULL, submitted TEXT NOT NULL, explanation TEXT NOT NULL, created INTEGER NOT NULL);

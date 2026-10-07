@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: deep-trivia
+    runtime: node
+    plan: starter
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/session
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: PUBLIC_ORIGIN
+        sync: false
+      - key: DATABASE_PATH
+        value: /var/data/deep-trivia.sqlite
+    disk:
+      name: deep-trivia-data
+      mountPath: /var/data
+      sizeGB: 1
