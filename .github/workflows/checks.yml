@@ -22,8 +22,10 @@ jobs:
       - run: npm run content:validate
       - run: npm run build
       - run: npm test
+      - run: npm run test:cloud
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
+      - run: npm run test:e2e:cloud
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

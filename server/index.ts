@@ -8,7 +8,7 @@ import {createApp} from './app';
 import {bank} from './content';
 import {validateContent} from '../src/shared/core';
 if(existsSync('.env'))process.loadEnvFile('.env');
-const production=process.argv.includes('--production');const port=Number(process.env.PORT??3000);const publicUrl=new URL(process.env.PUBLIC_ORIGIN??`http://localhost:${port}`);const origin=publicUrl.origin;
+const production=process.argv.includes('--production');const port=Number(process.env.PORT??3000);const publicUrl=new URL(process.env.PUBLIC_ORIGIN||process.env.RENDER_EXTERNAL_URL||`http://localhost:${port}`);const origin=publicUrl.origin;
 if(production&&publicUrl.protocol!=='https:'&&!['localhost','127.0.0.1','[::1]'].includes(publicUrl.hostname))throw new Error('Production requires an HTTPS PUBLIC_ORIGIN');
 if(process.env.TEST_FAST_TIMERS==='1'&&production)throw new Error('Accelerated test timers are forbidden in production');
 const errors=validateContent(bank);if(errors.length)throw new Error(errors.join('\n'));

@@ -1,6 +1,6 @@
 # Acceptance verification — 7 October 2026
 
-Built and verified locally in `C:\Users\axoll\work\krillion`, using Node 24.20.0, Chromium and a production Express/SQLite server. No public deployment was requested for this stage or performed.
+Built and verified locally in `C:\Users\axoll\work\krillion`, using Node 24.20.0 and Chromium. Published at [Deep Trivia](https://deep-trivia.axollis.chatgpt.site) through Sites, using persistent D1 storage. The original Express/SQLite local server remains available.
 
 ## Results
 
@@ -8,8 +8,12 @@ Built and verified locally in `C:\Users\axoll\work\krillion`, using Node 24.20.0
 - Content validation: **passed** — 120 reviewed/curated prompts, 4,789 canonical answers, all eight categories, 99 prompts with at least 25 answers, zero schema or alias-collision errors.
 - Explicit migration and content seeding commands: **passed**, preserving existing data.
 - Unit/API/integration/process-restart suite: **13 passed**.
-- Browser suite: **4 passed**; includes complete two-player comparison, 57 Endless rounds, 360 px layouts and recovery from a saved answer’s lost response.
-- Dependency audit at installation: zero reported vulnerabilities.
+- Cloud adapter suite: **5 passed**; includes concurrent submissions/claims, old-save compatibility and lossless compression of 1,200 pinned prompts below the D1 row limit.
+- Cloud browser suite: **5 passed**; includes complete two-player comparison, 57 Endless rounds, 360 px layouts, lost-response recovery and the read-only visible-game tool.
+- Public browser check: **passed** with real timers — two independent sessions, identical seven-question order, two 700-point results, hidden opponent results before completion, comparison refresh and a 360 px home screen without overflow or page errors.
+- New cloud save and reload on the public deployment: **passed**.
+- Public persistence across redeployment: **passed** — both browser sessions retrieved their original 700-point comparison after the Worker was redeployed; a new 100-point answer also saved successfully afterward.
+- Production dependency audit: zero reported vulnerabilities. Development tooling has four moderate advisories inherited through the migration generator; these packages are not included in the deployed Worker bundle.
 
 These results refer to the shipped implementation, not a mockup. Accelerated browser timers are confined to the test server; ordinary local play uses the brief’s actual 3-second reading and 25-second answer periods.
 
@@ -21,13 +25,13 @@ These results refer to the shipped implementation, not a mockup. Accelerated bro
 | 4 | Normalisation, aliases, invalid/ambiguous cases | **Passed.** Every shipped canonical name and alias is matched in tests. Explicit cases cover whitespace, Unicode width, diacritics, curated alternate names, rejected typos and ambiguous aliases. Fuzzy matching is disabled. |
 | 5 | Timeout, deadline edge, late/double/retry/reload/reconnect | **Passed locally.** Server tests cover just-before-deadline and late/blank timeouts, revised retries and one outcome per round. Browser test discards a response after the server commits, then retries the original request. Challenge reload preserves the prompt/deadline. Timers use absolute server times with a documented 250 ms transport tolerance. |
 | 6 | Validated substantial reviewed bank | **Passed for the shipped bank, with the review limits below.** 120 original prompts; 99/120 have 25+ answers. All have sources, qualifiers, aliases, tier rationales, three or more examples and exactly one gem with an original factual learning note. Validation checks structure and collisions, not every fact’s truth. |
-| 7 | Isolated players, persisted comparison, server restart | **Passed locally.** Two isolated browser contexts receive identical ordered prompt texts, finish separate perfect runs and compare real results. A separate test launches two fresh production Node processes in succession and retrieves both saved 700-point results from the same SQLite file. |
+| 7 | Isolated players, persisted comparison, server restart | **Passed locally and on the public host.** Two isolated browser contexts finish identical ordered prompts and compare real results. Two fresh local Node processes retrieve the same saved scores. On the public Sites host, both browsers retrieve their original 700-point results after Worker redeployment. |
 | 8 | No hidden bank/creator answers before completion | **Passed.** Actual HTTP responses are checked: fresh guests get no run credential, results or snapshot; unfinished opponents get no creator results; only the current question is returned. Ownership checks reject a different browser’s run. There is no public content endpoint. |
 | 9 | Content update cannot alter an active challenge | **Passed.** Test replaces general bank text/answers/versions and changes timer/scoring defaults after creation. The existing challenge retains its original question, version, deadline and 100-point gem score. Snapshots, points and rules are pinned. |
 | 10 | Third guest, bad/expired link, unavailable storage/backend | **Passed within the local tests.** Third-player page and bad-link recovery are browser-tested. Expiry is tested against the server clock. Denied browser storage and interrupted API calls show explanatory recovery text; a closed database returns a usable 503 response. Insufficient content gives a widen-categories message. |
 | 11 | Copy/share fallback without spoilers | **Passed for fallback and generated text.** Browser test denies clipboard access and verifies selectable sharing text containing totals but no answer spoilers. Native device sharing is implemented with `navigator.share`; an OS share sheet was not exercised on a physical device. |
 | 12 | Keyboard, 360 px/mobile keyboard, reduced motion | **Passed for desktop/emulated browser checks; physical-device verification remains.** Enter commits answers through complete runs. Screenshots and DOM width checks cover 360 px. A reduced viewport simulates keyboard space and confirms Submit is reachable by scrolling. Reduced-motion media disables diver animation. A real phone keyboard and screen-reader audio have not been manually tested. |
-| 13 | Public URL and public challenge deep-link refresh | **Not passed: hosting has not been configured.** Local browser deep links survive refresh, and the production server serves deep links correctly. This is not evidence of a publicly reachable game. |
+| 13 | Public URL and public challenge deep-link refresh | **Passed.** The public HTTPS game loads, two isolated browser sessions finish the same challenge and compare actual 700-point results, and the public challenge page retains that comparison after refresh. |
 
 ## Review and testing limits
 
@@ -48,10 +52,10 @@ npm.cmd test
 npm.cmd run test:e2e
 ```
 
-The browser run writes `test-results/desktop-home.png`, `desktop-result.png`, `mobile-home.png` and `mobile-round.png`. These were visually inspected for layout, scene consistency and readable controls. Failed exploratory test runs were corrected; the final four-test browser run passed.
+The browser run writes `test-results/desktop-home.png`, `desktop-result.png`, `mobile-home.png` and `mobile-round.png`. These were visually inspected for layout, scene consistency and readable controls. The public verification also writes `test-results/public-comparison.png` and `public-mobile-home.png`. The final cloud browser run passed all five tests.
 
-## Remaining public-sharing dependency
+## Public deployment
 
-Follow [README.md — Send it to friends](README.md#send-it-to-friends). The supplied Render configuration needs a connected source repository, a Node web service, a persistent disk and the actual HTTPS `PUBLIC_ORIGIN`. You must create/authorise the hosting account and choose its service plan. After deployment, complete one public challenge on two devices and refresh it after a service restart to close criterion 13.
+Share [Deep Trivia](https://deep-trivia.axollis.chatgpt.site), or use Challenge a friend and copy its invitation. The connected Sites deployment uses D1 and does not need a paid Render service. Render remains an optional alternative documented in the README.
 
-The source repository is [DeepTrivia on GitHub](https://github.com/axollis1-art/DeepTrivia). No paid hosting service was created, and no successful public deployment or public friend comparison is claimed.
+The source repository is [DeepTrivia on GitHub](https://github.com/axollis1-art/DeepTrivia). Public verification used independent Chromium sessions, not two physical phones; the physical keyboard and native-sharing limits above still apply. `scripts/public-smoke.ts` checks a complete public challenge and waits for an interactive Enter after redeployment to verify retained scores. `scripts/public-save-smoke.ts` checks a fresh save and refresh on the current live backend.

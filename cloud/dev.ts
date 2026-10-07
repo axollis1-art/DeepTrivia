@@ -1,0 +1,10 @@
+import express from 'express';
+import {createServer} from 'vite';
+import {api} from './api';
+import {CloudGame} from './game';
+import {bank} from '../server/content';
+import {LocalDatabase} from './local-db';
+const port=Number(process.env.PORT??3000);const origin=process.env.PUBLIC_ORIGIN??`http://localhost:${port}`;
+const db=new LocalDatabase(process.env.DATABASE_PATH??'./data/cloud-dev.sqlite');const fast=process.env.TEST_FAST_TIMERS==='1';const game=new CloudGame(db,bank,Date.now,fast?50:3000,fast?3000:25000);
+const app=express();app.use((req,res,next)=>{let path=req.path;try{for(let i=0;i<3;i++)path=decodeURIComponent(path);}catch{res.sendStatus(400);return;}path=path.replaceAll('\\','/');if(/\/(server|cloud|db|data|migrations|scripts|tests)(\/|$)|\/\.env(?:[./]|$)/i.test(path)){res.sendStatus(404);return;}next();});app.use('/api',express.raw({type:()=>true,limit:'8kb'}));app.use('/api',async(req,res)=>{try{const headers=new Headers();for(const [key,value] of Object.entries(req.headers))if(value)headers.set(key,Array.isArray(value)?value.join(','):value);const request=new Request(new URL(req.originalUrl,origin),{method:req.method,headers,body:['GET','HEAD'].includes(req.method)?undefined:req.body});const response=await api(request,{DB:db,PUBLIC_ORIGIN:origin},false,game);response.headers.forEach((value,key)=>res.setHeader(key,value));res.status(response.status).send(Buffer.from(await response.arrayBuffer()));}catch(error){console.error(error);res.status(503).json({error:'The dive service could not save or load your progress. Your answer may still be pending; retry to check.'});}});
+const vite=await createServer({server:{middlewareMode:true,hmr:{port:port+20000}},appType:'spa'});app.use(vite.middlewares);const server=app.listen(port,'0.0.0.0');for(const signal of ['SIGINT','SIGTERM'] as const)process.on(signal,()=>server.close(()=>{db.db.close();process.exit(0);}));

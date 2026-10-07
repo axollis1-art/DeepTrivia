@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./tests/browser',timeout:120000,expect:{timeout:10000},workers:1,use:{baseURL:'http://localhost:3100',headless:true,trace:'retain-on-failure'},reporter:'list',webServer:{command:'npm run dev:cloud',url:'http://localhost:3100',reuseExistingServer:false,timeout:60000,env:{PORT:'3100',PUBLIC_ORIGIN:'http://localhost:3100',DATABASE_PATH:'./data/cloud-e2e.sqlite',TEST_FAST_TIMERS:'1'}}});

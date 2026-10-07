@@ -2,6 +2,8 @@
 
 A playable British-English ocean trivia game: unlimited seven-question dives, continuous Endless mode, untimed solo practice, and asynchronous two-person challenges. React/TypeScript frontend, Express APIs, and persistent SQLite. All scoring happens on the server. No accounts, ads, paywall, lives or play quotas.
 
+**Play online: [Deep Trivia](https://deep-trivia.axollis.chatgpt.site).** The public site uses the cloud adapter and persistent D1 storage through Sites. No Render service or paid Render plan is needed for this deployment.
+
 ## Play locally
 
 Requires **Node.js 24**. To download the project on another computer:
@@ -49,19 +51,27 @@ GitHub Actions runs content validation, the production build, unit/integration t
 
 ## Send it to friends
 
+### Connected Sites hosting
+
+The cloud adapter in `cloud/` supports Sites hosting with a managed D1 database. It preserves the existing frontend and server-authoritative scores, pinned prompts, guest sessions, challenge privacy and absolute deadlines. Each run or challenge is stored as a versioned document; compare-and-swap updates resolve concurrent requests, and atomic guarded batches reserve the friend slot. Prompt snapshots are compressed losslessly to keep long Endless saves compact, and the adapter still reads older uncompressed saves. SQL migrations are generated from `db/schema.ts` and applied by the host before publication.
+
+`npm.cmd run test:cloud` checks the adapter, concurrent operations and durable state. `npm.cmd run test:e2e:cloud` runs the browser suite against that backend locally. `npm.cmd run build` also emits the Worker at `dist/server/index.js` and public assets at `dist/client/`. Runtime values are managed by Sites; `.openai/hosting.json` contains only the site identity and logical storage binding. The original Node/SQLite local server remains available.
+
+### Alternative: Render
+
 **A localhost link works only on this computer.** A GitHub repository stores the source; GitHub Pages alone cannot run this application’s database and server.
 
 The supplied [render.yaml](render.yaml) describes one straightforward hosting option: a Node web service with a persistent disk. Render persistent disks require a paid service; its free web service filesystem loses SQLite data on restart/redeploy. Check the current plan before buying. Official docs: [persistent disks](https://render.com/docs/disks), [free service limitations](https://render.com/docs/free), [Node deployment](https://render.com/docs/deploy-node-express-app).
 
 1. Use the [DeepTrivia repository](https://github.com/axollis1-art/DeepTrivia) as the deployment source. It includes the lockfile, source, migration, fonts’ licence notices and docs. `node_modules`, `dist`, `data`, `.env` and test output are excluded by `.gitignore`. This repository is public, so its curated answer bank can be read on GitHub; change the repository visibility to private if you want to prevent that.
-2. Create a Render **web service**, connect that repository, and choose a plan supporting a persistent disk. You can use `render.yaml` as a Blueprint or enter the settings below manually. This step requires your Render account and acceptance of its service charges.
+2. Open [Deploy Deep Trivia on Render](https://render.com/deploy?repo=https://github.com/axollis1-art/DeepTrivia), sign in, and create the Blueprint using `render.yaml`. Review the Starter web service and 1 GB persistent disk shown in the setup. This step requires your Render account and acceptance of its service charges. Alternatively, create a Render **web service** and enter the settings below manually.
 3. Use **Node 24**, build command `npm ci --include=dev && npm run build`, and start command `npm run start`. Attach a disk at `/var/data` and set `DATABASE_PATH=/var/data/deep-trivia.sqlite`.
-4. Once Render assigns the HTTPS address, set `PUBLIC_ORIGIN` to its exact origin, for example `https://deep-trivia-example.onrender.com`, and redeploy. `PORT` is supplied by the host. No API key or external scoring service is needed.
+4. Render supplies `RENDER_EXTERNAL_URL` automatically, and the server uses it as the public origin, so the first deployment needs no manual URL entry. Leave `PUBLIC_ORIGIN` unset on Render unless using a custom domain; for that case, set it to the exact HTTPS origin and redeploy. `PORT` is supplied by the host. No API key or external scoring service is needed. See [Render's default environment variables](https://render.com/docs/environment-variables).
 5. Open the public site, finish a timed dive, create a challenge, and copy its link. Open that invite in a different browser/device, finish it, and confirm both results. Reload the challenge link and revisit it after restarting the service. This last step is the public-deployment acceptance check and has **not** been run locally.
 
 Other Node hosts or a VPS work if they provide HTTPS, one persistent filesystem and an always-running Node process. Use a single application instance with this SQLite adapter. For multiple instances/serverless hosting, add a shared managed database adapter first. A domain name is optional: the host’s HTTPS address is sufficient.
 
-**What remains for public sharing:** your hosting account/service, its persistent disk, the public origin configuration and a public two-device verification. A GitHub repository is useful for deployment and updates; it is not needed to play locally.
+**For a separate Render deployment:** you need a hosting account/service, its persistent disk and a public two-device verification. The existing public Sites link is already available for playing with friends. A GitHub repository is useful for deployment and updates; it is not needed to play locally.
 
 ## Configuration, migrations and backup
 
@@ -117,4 +127,4 @@ After a network failure, the UI locks the pending submission and offers Retry. I
 
 ## Credits
 
-See [CREDITS.md](CREDITS.md). No proprietary Krillion answer data or assets were used. No public deployment has been claimed or performed.
+See [CREDITS.md](CREDITS.md). No proprietary Krillion answer data or assets were used.

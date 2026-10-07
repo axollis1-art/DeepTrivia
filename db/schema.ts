@@ -1,0 +1,5 @@
+import {sqliteTable,text,integer,index} from 'drizzle-orm/sqlite-core';
+export const sessions = sqliteTable('cloud_sessions',{id:text('id').primaryKey(),csrf:text('csrf').notNull(),created:integer('created').notNull()});
+export const runs = sqliteTable('cloud_runs',{id:text('id').primaryKey(),sessionId:text('session_id').notNull().references(()=>sessions.id),state:text('state').notNull(),version:integer('version').notNull().default(0),created:integer('created').notNull()},t=>[index('cloud_runs_session').on(t.sessionId)]);
+export const challenges = sqliteTable('cloud_challenges',{id:text('id').primaryKey(),creatorRunId:text('creator_run_id').notNull().unique().references(()=>runs.id),state:text('state').notNull(),version:integer('version').notNull().default(0),created:integer('created').notNull(),expires:integer('expires').notNull()});
+export const reports = sqliteTable('cloud_reports',{id:text('id').primaryKey(),sessionId:text('session_id').notNull(),promptId:text('prompt_id').notNull(),promptVersion:integer('prompt_version').notNull(),submitted:text('submitted').notNull(),explanation:text('explanation').notNull(),created:integer('created').notNull()});

@@ -1,0 +1,23 @@
+import {CloudGame,CloudError,newId,type Database} from './game';
+import {bank} from '../server/content';
+export interface Env {DB:Database; ASSETS?:{fetch(request:Request):Promise<Response>}; PUBLIC_ORIGIN?:string}
+const limits = new Map<string,{count:number;reset:number}>();
+export async function api(request:Request,env:Env,secure=true,game=new CloudGame(env.DB,bank.filter(p=>p.reviewed))) {
+  const received=game.clock(); const url=new URL(request.url); const origin=env.PUBLIC_ORIGIN || url.origin; const headers=new Headers({'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin'});
+  const json=(value:unknown,status=200)=>new Response(JSON.stringify(value),{status,headers});
+  try {
+    const key=request.headers.get('cf-connecting-ip')??'local'; const now=Date.now(); const rate=limits.get(key); if(!rate||rate.reset<now)limits.set(key,{count:1,reset:now+60000});else if(++rate.count>300)throw new CloudError(429,'Too many requests. Wait a minute and try again.');if(limits.size>10000)for(const [k,v] of limits)if(v.reset<now)limits.delete(k);
+    let sid=request.headers.get('cookie')?.match(/(?:^|;\s*)deep_session=([A-Za-z0-9_-]{32})/)?.[1];let session=sid?await game.statement('SELECT id,csrf FROM cloud_sessions WHERE id=?',sid).first<{id:string;csrf:string}>():null;
+    if(!session){sid=newId();session={id:sid,csrf:newId()};await game.statement('INSERT INTO cloud_sessions(id,csrf,created) VALUES(?,?,?)',sid,session.csrf,now).run();headers.set('Set-Cookie',`deep_session=${sid}; Path=/; Max-Age=5184000; HttpOnly; SameSite=Lax${secure?'; Secure':''}`);}
+    if(!['GET','HEAD'].includes(request.method)){const token=request.headers.get('x-csrf-token');if(request.headers.get('origin')!==origin||token!==session.csrf)throw new CloudError(403,'Your session needs refreshing. Reload the page and try again.');}
+    let body:any={};if(!['GET','HEAD'].includes(request.method)){const declared=Number(request.headers.get('content-length')??0);if(declared>8192)throw new CloudError(413,'That request is too large.');const reader=request.body?.getReader();if(reader){let size=0;const chunks:Uint8Array[]=[];while(true){const part=await reader.read();if(part.done)break;size+=part.value.byteLength;if(size>8192){await reader.cancel();throw new CloudError(413,'That request is too large.');}chunks.push(part.value);}const bytes=new Uint8Array(size);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.byteLength;}try{body=size?JSON.parse(new TextDecoder().decode(bytes)):{};}catch{throw new CloudError(400,'That request could not be read.');}}if(!body||typeof body!=='object'||Array.isArray(body))throw new CloudError(400,'That request could not be read.');}
+    const route=url.pathname;const method=request.method;const sidValue=session.id;const invite=(id:string)=>({id,url:`${origin}/challenge/${id}`});
+    if(route==='/api/session'&&method==='GET')return json({csrf:session.csrf,content:{prompts:game.bank.length,categories:[...new Set(game.bank.map(p=>p.category))]},serverNow:game.clock()});
+    if(route==='/api/runs'&&method==='POST')return json({runId:await game.createRun(sidValue,body)});
+    const run=route.match(/^\/api\/runs\/([A-Za-z0-9_-]+)(?:\/(next|submit|finish))?$/);if(run){const rid=run[1];if(!run[2]&&method==='GET')return json(await game.state(rid,sidValue));if(method==='POST'){if(run[2]==='next')return json(await game.begin(rid,sidValue));if(run[2]==='submit')return json(await game.submit(rid,sidValue,body,received));if(run[2]==='finish')return json(await game.endEndless(rid,sidValue));}}
+    if(route==='/api/challenges'&&method==='POST')return json(invite(await game.createChallenge(sidValue,body)));
+    const challenge=route.match(/^\/api\/challenges\/([A-Za-z0-9_-]+)(?:\/(claim|rematch))?$/);if(challenge){const cid=challenge[1];if(!challenge[2]&&method==='GET')return json({...await game.summary(cid,sidValue),url:invite(cid).url});if(method==='POST'){if(challenge[2]==='claim')return json({runId:await game.claim(cid,sidValue,body.nickname)});if(challenge[2]==='rematch')return json(invite(await game.rematch(cid,sidValue,body.nickname)));}}
+    if(route==='/api/reports'&&method==='POST'){await game.report(sidValue,body);return json({saved:true});}
+    return json({error:'This action was not found. Return to the surface.'},404);
+  }catch(error){if(!(error instanceof CloudError))console.error('Deep Trivia storage/request error',error);return json({error:error instanceof CloudError?error.message:'The dive service could not save or load your progress. Your answer may still be pending; retry to check.'},error instanceof CloudError?error.status:503);}
+}

@@ -10,6 +10,7 @@ import '@fontsource/barlow-condensed/latin-700.css';
 import '@fontsource/barlow-condensed/latin-800.css';
 import '@fontsource/silkscreen/latin-400.css';
 import './style.css';
+import './webmcp';
 const defaults:Settings={sound:false,reducedMotion:false,scanlines:true,relaxed:false,categories:[...CATEGORIES]};
 const metres=(n:number)=>n.toLocaleString('en-GB')+' m';
 type Page='home'|'game'|'settings'|'history'|'how'|'credits'|'challenge';
