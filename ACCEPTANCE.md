@@ -1,4 +1,4 @@
-# Acceptance verification — 7 October 2026
+# Acceptance verification — 8 October 2026
 
 Built and verified locally in `C:\Users\axoll\work\krillion`, using Node 24.20.0 and Chromium. Published at [Deep Trivia](https://deep-trivia.axollis.chatgpt.site) through Sites, using persistent D1 storage. The original Express/SQLite local server remains available.
 
@@ -7,9 +7,9 @@ Built and verified locally in `C:\Users\axoll\work\krillion`, using Node 24.20.0
 - Production build and TypeScript check: **passed**.
 - Content validation: **passed** — 120 reviewed/curated prompts, 4,789 canonical answers, all eight categories, 99 prompts with at least 25 answers, zero schema or alias-collision errors.
 - Explicit migration and content seeding commands: **passed**, preserving existing data.
-- Unit/API/integration/process-restart suite: **13 passed**.
-- Cloud adapter suite: **5 passed**; includes concurrent submissions/claims, old-save compatibility and lossless compression of 1,200 pinned prompts below the D1 row limit.
-- Cloud browser suite: **5 passed**; includes complete two-player comparison, 57 Endless rounds, 360 px layouts, lost-response recovery and the read-only visible-game tool.
+- Unit/API/integration/process-restart suite: **15 passed**.
+- Cloud adapter suite: **6 passed**; includes rejected-answer retries, unchanged deadlines, conservative typo acceptance, concurrent submissions/claims, old-save compatibility and lossless compression of 1,200 pinned prompts below the D1 row limit.
+- Local and cloud browser suites: **6 passed each**; includes retry feedback and typo acceptance within an unchanged timer, complete two-player comparison, 57 Endless rounds, 360 px layouts, lost-response recovery and the read-only visible-game tool.
 - Public browser check: **passed** with real timers — two independent sessions, identical seven-question order, two 700-point results, hidden opponent results before completion, comparison refresh and a 360 px home screen without overflow or page errors.
 - New cloud save and reload on the public deployment: **passed**.
 - Public persistence across redeployment: **passed** — both browser sessions retrieved their original 700-point comparison after the Worker was redeployed; a new 100-point answer also saved successfully afterward.
@@ -22,7 +22,7 @@ These results refer to the shipped implementation, not a mockup. Accelerated bro
 | 1 | Complete seven questions and play again | **Passed.** Browser test completes a seven-question run and starts another. First-run instructions are displayed and remembered. A separate integration test completes a zero-score run. |
 | 2 | At least 50 consecutive Endless prompts | **Passed.** Server test completes 56 and begins question 57; browser test completes 57 and explicitly finishes. Stage depth resets while session totals continue. |
 | 3 | Consistent score/depth, perfect 700/7,000 | **Passed.** Actual perfect runs yield 700 and 7,000 m; both browser participants draw at those values. Recap and share text agree. Totals derive from round outcomes. |
-| 4 | Normalisation, aliases, invalid/ambiguous cases | **Passed.** Every shipped canonical name and alias is matched in tests. Explicit cases cover whitespace, Unicode width, diacritics, curated alternate names, rejected typos and ambiguous aliases. Fuzzy matching is disabled. |
+| 4 | Normalisation, aliases, invalid/ambiguous cases | **Passed with the user-approved rule change of 8 October.** Every canonical name and alias matches. Longer names accept one insertion, deletion, substitution or adjacent transposition only when a single accepted answer fits; exact matches win. Short, ambiguous and larger spelling errors remain unmatched. Rejected answers allow unlimited retries within the unchanged original timer, ending only on an accepted answer or timeout. Both backends verify scores, round counts, practice retries and expiry. |
 | 5 | Timeout, deadline edge, late/double/retry/reload/reconnect | **Passed locally.** Server tests cover just-before-deadline and late/blank timeouts, revised retries and one outcome per round. Browser test discards a response after the server commits, then retries the original request. Challenge reload preserves the prompt/deadline. Timers use absolute server times with a documented 250 ms transport tolerance. |
 | 6 | Validated substantial reviewed bank | **Passed for the shipped bank, with the review limits below.** 120 original prompts; 99/120 have 25+ answers. All have sources, qualifiers, aliases, tier rationales, three or more examples and exactly one gem with an original factual learning note. Validation checks structure and collisions, not every fact’s truth. |
 | 7 | Isolated players, persisted comparison, server restart | **Passed locally and on the public host.** Two isolated browser contexts finish identical ordered prompts and compare real results. Two fresh local Node processes retrieve the same saved scores. On the public Sites host, both browsers retrieve their original 700-point results after Worker redeployment. |

@@ -104,7 +104,7 @@ Start with `server/content.ts` and the eight `server/content-*.ts` files. Each `
 
 Run `npm.cmd run content:validate` after every edit. `npx.cmd tsx scripts/validate-content.ts --strict-target` also fails if the reviewed bank falls below 120 prompts. Validation checks structural consistency and matching collisions, **not the truth of every fact**. Editorial review remains necessary. `npx.cmd tsx scripts/audit-sources.ts` optionally checks source URLs; some references block automated clients or move over time.
 
-Missing-answer reports are stored in `missing_reports` with the authoritative prompt/version and submitted text. They do not change a scored attempt. There is no public report-browsing endpoint.
+Missing-answer reports are stored in `missing_reports` (or `cloud_reports` on D1) with the authoritative prompt/version and submitted text. An unmatched answer can be reported while its timer continues, and the player can still try another answer. Reports do not change scores or deadlines. There is no public report-browsing endpoint.
 
 ## Game and API design
 
@@ -113,6 +113,10 @@ The server never supplies the full answer bank or future questions to the fronte
 Ownership uses a secure random HttpOnly, SameSite=Lax cookie (Secure in production). Writes require a per-session CSRF token and the configured same origin. Invite IDs have 192 bits of random entropy. Nicknames are limited to 24 characters, answers to 120, and all user text renders as React text. Requests are rate-limited; limits are abuse protection, not a play quota.
 
 Each round has a server start, reading end and absolute deadline. A documented **250 ms transport tolerance** handles delivery jitter; the browser stops accepting typed answers at the displayed deadline. Reloading does not create a new window. Retries preserve the original request ID, and a committed round cannot be edited or scored twice. The first friend slot is claimed inside a SQLite `BEGIN IMMEDIATE` transaction.
+
+Unaccepted answers now return feedback and leave the question open for unlimited revised attempts within that original window. They do not score, complete a round or extend the timer. Accepted answers end the question; timeouts score zero. Untimed practice also permits retries. Delivery retries reuse their request ID; a revised answer gets a new ID.
+
+Matching checks normalised canonical names and curated aliases first. It then permits one insertion, deletion, substitution or adjacent letter swap when both names contain at least five non-space characters and only one accepted answer identity fits. Ambiguous spellings and shorter answers need an exact match. A spelling correction receives the canonical answer’s usual tier and points.
 
 After a network failure, the UI locks the pending submission and offers Retry. If the server saved it, Retry returns that original result. If no request reached the server before expiry, the eventual result is an honest zero-score timeout. Timers continue in background tabs and menus. This is friendly competition, not strong anti-cheat protection.
 
