@@ -1,20 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {bank} from '../server/content';
-import {normalise,matchAnswer,validateContent,selectPrompts,phase} from '../src/shared/core';
+import {normalise,matchAnswer,suggestAnswer,validateContent,selectPrompts,phase} from '../src/shared/core';
 import {POINTS} from '../src/shared/types';
-test('single-character typos match only one longer answer, with exact matches taking priority',()=>{
+test('spelling suggestions tolerate several edits with exact matches taking priority',()=>{
  const p=structuredClone(bank[0]);p.answers=p.answers.slice(0,2);p.answers[0].canonical='banana';p.answers[0].aliases=['yellow banana'];p.answers[1].canonical='bandana';p.answers[1].aliases=[];
  assert.equal(matchAnswer(p,'banana')?.id,p.answers[0].id);
- assert.equal(matchAnswer(p,'banxana'),null); // one edit from both identities
- assert.equal(matchAnswer(p,'bnaana')?.id,p.answers[0].id);
- assert.equal(matchAnswer(p,'yellow banan')?.id,p.answers[0].id);
- assert.equal(matchAnswer(p,'baxxxna'),null);
+ assert.equal(suggestAnswer(p,'banxana'),null); // one edit from both identities
+ assert.equal(suggestAnswer(p,'bnaana')?.id,p.answers[0].id);
+ assert.equal(suggestAnswer(p,'yellow banan')?.id,p.answers[0].id);
+ assert.equal(suggestAnswer(p,'baxxxna'),null);
  const africa=bank.find(p=>p.id==='africa')!;
- assert.equal(matchAnswer(africa,'Nigeira')?.canonical,'Nigeria');
+ assert.equal(suggestAnswer(africa,'Nigeira')?.canonical,'Nigeria');
  assert.equal(matchAnswer(africa,'Niger')?.canonical,'Niger');
- assert.equal(matchAnswer(africa,'Nigera'),null);
+ assert.equal(suggestAnswer(africa,'Nigera'),null);
  assert.equal(matchAnswer(africa,'Keny'),null);
+ p.answers[0].canonical='strawberry';p.answers[0].aliases=[];
+ assert.equal(suggestAnswer(p,'strowbarri')?.canonical,'strawberry');
+ assert.equal(matchAnswer(p,'strowbarri'),null);
+ assert.equal(suggestAnswer(p,'zzzzzzzzzz'),null);
 });
 test('normalisation accepts accents, curated aliases and harmless punctuation without fuzzy guessing',()=>{const p=bank.find(p=>p.id==='africa')!;assert.equal(matchAnswer(p,'  SAO   TOME AND PRINCIPE  ')?.canonical,'São Tomé and Príncipe');assert.equal(matchAnswer(p,'Ivory Coast')?.canonical,'Côte d’Ivoire');assert.equal(matchAnswer(p,'Keny'),null);assert.equal(matchAnswer(p,'Congo'),null);assert.equal(matchAnswer(p,'x'.repeat(121)),null);assert.equal(matchAnswer(bank.find(p=>p.id==='shakespeare')!,'a midsummer nights dream')?.canonical,'A Midsummer Night’s Dream');assert.equal(normalise('ＲＯＳＥ'),normalise('rose'));});
 test('all content matches itself and is internally consistent; ambiguous aliases fail validation',()=>{assert.deepEqual(validateContent(bank),[]);for(const p of bank)for(const a of p.answers){assert.equal(matchAnswer(p,a.canonical)?.id,a.id);for(const alias of a.aliases)assert.equal(matchAnswer(p,alias)?.id,a.id);}const p=structuredClone(bank[0]);p.answers[0].aliases.push(p.answers[1].canonical);assert.ok(validateContent([p]).some(e=>e.includes('collision')));});
