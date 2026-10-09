@@ -1,0 +1,2311 @@
+{
+  "checkedOn": "2026-10-09",
+  "note": "Name visibility is a source-triage aid, not proof of factual validity. Dynamic sites or bot blocking can hide correct entries. Category and closed-set boundaries also require editorial review.",
+  "results": [
+    {
+      "url": "https://www.bbcgoodfood.com/glossary",
+      "status": 200,
+      "finalUrl": "https://www.bbcgoodfood.com/glossary",
+      "questions": [
+        {
+          "id": "vegetables",
+          "answers": 76,
+          "namesVisible": 8
+        },
+        {
+          "id": "fruits",
+          "answers": 90,
+          "namesVisible": 9
+        },
+        {
+          "id": "soups",
+          "answers": 57,
+          "namesVisible": 0
+        },
+        {
+          "id": "sauces",
+          "answers": 63,
+          "namesVisible": 0
+        },
+        {
+          "id": "japanese-food",
+          "answers": 51,
+          "namesVisible": 1
+        },
+        {
+          "id": "indian-food",
+          "answers": 65,
+          "namesVisible": 1
+        },
+        {
+          "id": "italian-dishes",
+          "answers": 49,
+          "namesVisible": 1
+        },
+        {
+          "id": "cakes",
+          "answers": 50,
+          "namesVisible": 3
+        },
+        {
+          "id": "herbs",
+          "answers": 60,
+          "namesVisible": 6
+        },
+        {
+          "id": "breads",
+          "answers": 53,
+          "namesVisible": 4
+        },
+        {
+          "id": "cheese",
+          "answers": 60,
+          "namesVisible": 0
+        },
+        {
+          "id": "breakfast-food",
+          "answers": 32,
+          "namesVisible": 7
+        },
+        {
+          "id": "sandwich-fillings",
+          "answers": 32,
+          "namesVisible": 7
+        },
+        {
+          "id": "ice-cream-flavours",
+          "answers": 32,
+          "namesVisible": 9
+        },
+        {
+          "id": "baking-ingredients",
+          "answers": 32,
+          "namesVisible": 7
+        },
+        {
+          "id": "cooking-methods",
+          "answers": 32,
+          "namesVisible": 2
+        },
+        {
+          "id": "nonalcoholic-drinks",
+          "answers": 32,
+          "namesVisible": 3
+        },
+        {
+          "id": "biscuits",
+          "answers": 32,
+          "namesVisible": 1
+        },
+        {
+          "id": "pizza-toppings",
+          "answers": 32,
+          "namesVisible": 7
+        },
+        {
+          "id": "salad-ingredients",
+          "answers": 34,
+          "namesVisible": 12
+        },
+        {
+          "id": "tea-types",
+          "answers": 32,
+          "namesVisible": 4
+        },
+        {
+          "id": "coffee-styles",
+          "answers": 32,
+          "namesVisible": 0
+        },
+        {
+          "id": "egg-dishes",
+          "answers": 32,
+          "namesVisible": 0
+        },
+        {
+          "id": "potato-dishes",
+          "answers": 32,
+          "namesVisible": 0
+        },
+        {
+          "id": "rice-dishes",
+          "answers": 34,
+          "namesVisible": 1
+        },
+        {
+          "id": "mexican-dishes",
+          "answers": 34,
+          "namesVisible": 2
+        },
+        {
+          "id": "chinese-dishes",
+          "answers": 32,
+          "namesVisible": 0
+        },
+        {
+          "id": "seafood",
+          "answers": 34,
+          "namesVisible": 4
+        },
+        {
+          "id": "sweet-spreads",
+          "answers": 32,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/art/dance",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/art/dance",
+      "questions": [
+        {
+          "id": "dance-styles",
+          "answers": 68,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.rspb.org.uk/birds-and-wildlife/a-z",
+      "status": 200,
+      "finalUrl": "https://www.rspb.org.uk/birds-and-wildlife/a-z",
+      "questions": [
+        {
+          "id": "british-birds",
+          "answers": 93,
+          "namesVisible": 20
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.metmuseum.org/art/collection/search?department=18",
+      "status": 429,
+      "finalUrl": "https://www.metmuseum.org/art/collection/search?department=18",
+      "questions": [
+        {
+          "id": "instrument",
+          "answers": 88,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.cadbury.co.uk/products/",
+      "status": 200,
+      "finalUrl": "https://www.cadbury.co.uk/products/",
+      "questions": [
+        {
+          "id": "chocolate-bars",
+          "answers": 32,
+          "namesVisible": 10
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/topic/sauce",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/sauce",
+      "questions": [
+        {
+          "id": "mother-sauces",
+          "answers": 5,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://thelabradorclub.com/labrador-breed-standard/",
+      "status": 200,
+      "finalUrl": "https://thelabradorclub.com/labrador-breed-standard/",
+      "questions": [
+        {
+          "id": "labrador-colours",
+          "answers": 3,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://animals.sandiegozoo.org/animals",
+      "status": 200,
+      "finalUrl": "https://animals.sandiegozoo.org/animals",
+      "questions": [
+        {
+          "id": "mammal-groups",
+          "answers": 55,
+          "namesVisible": 2
+        },
+        {
+          "id": "bird-groups",
+          "answers": 51,
+          "namesVisible": 5
+        },
+        {
+          "id": "reptile-groups",
+          "answers": 36,
+          "namesVisible": 2
+        },
+        {
+          "id": "insects",
+          "answers": 42,
+          "namesVisible": 1
+        },
+        {
+          "id": "marsupials",
+          "answers": 34,
+          "namesVisible": 0
+        },
+        {
+          "id": "rodents",
+          "answers": 41,
+          "namesVisible": 1
+        },
+        {
+          "id": "amphibian-types",
+          "answers": 5,
+          "namesVisible": 0
+        },
+        {
+          "id": "animal-classes",
+          "answers": 5,
+          "namesVisible": 5
+        },
+        {
+          "id": "habitats",
+          "answers": 44,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/topic/",
+      "status": 200,
+      "finalUrl": "https://www.oxfordlearnersdictionaries.com/topic/",
+      "questions": [
+        {
+          "id": "animal-babies",
+          "answers": 34,
+          "namesVisible": 0
+        },
+        {
+          "id": "animal-sounds",
+          "answers": 37,
+          "namesVisible": 0
+        },
+        {
+          "id": "pet-care-items",
+          "answers": 40,
+          "namesVisible": 0
+        },
+        {
+          "id": "kitchen-tools",
+          "answers": 40,
+          "namesVisible": 0
+        },
+        {
+          "id": "home-appliances",
+          "answers": 40,
+          "namesVisible": 0
+        },
+        {
+          "id": "furniture",
+          "answers": 40,
+          "namesVisible": 0
+        },
+        {
+          "id": "cleaning-items",
+          "answers": 40,
+          "namesVisible": 0
+        },
+        {
+          "id": "clothing-types",
+          "answers": 43,
+          "namesVisible": 1
+        },
+        {
+          "id": "footwear",
+          "answers": 40,
+          "namesVisible": 0
+        },
+        {
+          "id": "stationery",
+          "answers": 40,
+          "namesVisible": 1
+        },
+        {
+          "id": "bathroom-items",
+          "answers": 40,
+          "namesVisible": 0
+        },
+        {
+          "id": "fabric-types",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "hand-tools",
+          "answers": 42,
+          "namesVisible": 1
+        },
+        {
+          "id": "craft-hobbies",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "seasons",
+          "answers": 4,
+          "namesVisible": 0
+        },
+        {
+          "id": "keyboard-keys",
+          "answers": 63,
+          "namesVisible": 6
+        },
+        {
+          "id": "computer-components",
+          "answers": 45,
+          "namesVisible": 0
+        },
+        {
+          "id": "digital-storage",
+          "answers": 42,
+          "namesVisible": 1
+        },
+        {
+          "id": "car-parts",
+          "answers": 49,
+          "namesVisible": 1
+        },
+        {
+          "id": "bicycle-parts",
+          "answers": 45,
+          "namesVisible": 2
+        },
+        {
+          "id": "weekdays",
+          "answers": 7,
+          "namesVisible": 0
+        },
+        {
+          "id": "months",
+          "answers": 12,
+          "namesVisible": 0
+        },
+        {
+          "id": "colours",
+          "answers": 53,
+          "namesVisible": 1
+        },
+        {
+          "id": "occupations",
+          "answers": 75,
+          "namesVisible": 1
+        },
+        {
+          "id": "english-vowels",
+          "answers": 5,
+          "namesVisible": 0
+        },
+        {
+          "id": "parts-of-speech",
+          "answers": 8,
+          "namesVisible": 0
+        },
+        {
+          "id": "art-supplies",
+          "answers": 43,
+          "namesVisible": 0
+        },
+        {
+          "id": "festivals",
+          "answers": 45,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/animal/great-ape",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/animal/great-ape",
+      "questions": [
+        {
+          "id": "great-apes",
+          "answers": 5,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/animal/bear",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/animal/bear",
+      "questions": [
+        {
+          "id": "bear-species",
+          "answers": 8,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/animal/tiger",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/animal/tiger",
+      "questions": [
+        {
+          "id": "tiger-subspecies",
+          "answers": 9,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/animal/penguin",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/animal/penguin",
+      "questions": [
+        {
+          "id": "penguin-genera",
+          "answers": 6,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://animals.sandiegozoo.org/animals/lion",
+      "status": 200,
+      "finalUrl": "https://animals.sandiegozoo.org/animals/lion",
+      "questions": [
+        {
+          "id": "lion-pride-roles",
+          "answers": 3,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/animal/monotreme",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/animal/monotreme",
+      "questions": [
+        {
+          "id": "monotreme-groups",
+          "answers": 6,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.royalkennelclub.com/search/breeds-a-to-z/",
+      "status": 200,
+      "finalUrl": "https://www.royalkennelclub.com/search/breeds-a-to-z/",
+      "questions": [
+        {
+          "id": "dog-breeds",
+          "answers": 62,
+          "namesVisible": 57
+        },
+        {
+          "id": "dog-groups",
+          "answers": 7,
+          "namesVisible": 6
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://cfa.org/breeds/",
+      "status": 200,
+      "finalUrl": "https://cfa.org/breeds/",
+      "questions": [
+        {
+          "id": "cat-breeds",
+          "answers": 41,
+          "namesVisible": 12
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.practicalfishkeeping.co.uk/fishkeeping-answers/",
+      "status": 200,
+      "finalUrl": "https://www.practicalfishkeeping.co.uk/fishkeeping-answers/",
+      "questions": [
+        {
+          "id": "pet-fish",
+          "answers": 38,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.thebritishrabbitcouncil.org/rabbit-breeds.php",
+      "status": 200,
+      "finalUrl": "https://www.thebritishrabbitcouncil.org/rabbit-breeds.php",
+      "questions": [
+        {
+          "id": "rabbit-breeds",
+          "answers": 38,
+          "namesVisible": 11
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/animal/horse",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/animal/horse",
+      "questions": [
+        {
+          "id": "horse-breeds",
+          "answers": 40,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.bluecross.org.uk/advice/hamster",
+      "status": 403,
+      "finalUrl": "https://www.bluecross.org.uk/advice/hamster",
+      "questions": [
+        {
+          "id": "hamster-species",
+          "answers": 6,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.practicalfishkeeping.co.uk/features/goldfish-varieties/",
+      "status": 404,
+      "finalUrl": "https://www.practicalfishkeeping.co.uk/features/goldfish-varieties/",
+      "questions": [
+        {
+          "id": "goldfish-varieties",
+          "answers": 18,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britishcavycouncil.org.uk/Breeds/",
+      "status": 200,
+      "finalUrl": "https://www.britishcavycouncil.org.uk/Breeds/",
+      "questions": [
+        {
+          "id": "guinea-pig-breeds",
+          "answers": 16,
+          "namesVisible": 12
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://apps.rhs.org.uk/horticulturaldatabase/summary2.asp",
+      "status": 200,
+      "finalUrl": "https://apps.rhs.org.uk/horticulturaldatabase/summary2.asp",
+      "questions": [
+        {
+          "id": "garden-tools",
+          "answers": 40,
+          "namesVisible": 1
+        },
+        {
+          "id": "plant-parts",
+          "answers": 48,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://boardgamegeek.com/browse/boardgame",
+      "status": 403,
+      "finalUrl": "https://boardgamegeek.com/browse/boardgame",
+      "questions": [
+        {
+          "id": "board-games",
+          "answers": 42,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.bicyclecards.com/how-to-play",
+      "status": 200,
+      "finalUrl": "https://bicyclecards.com/how-to-play",
+      "questions": [
+        {
+          "id": "card-suits",
+          "answers": 4,
+          "namesVisible": 2
+        },
+        {
+          "id": "card-ranks",
+          "answers": 13,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://instructions.hasbro.com/en-us/instruction/Clue-Game-Classic",
+      "status": 200,
+      "finalUrl": "https://instructions.hasbro.com/en-us/instruction/Clue-Game-Classic",
+      "questions": [
+        {
+          "id": "cluedo-weapons",
+          "answers": 6,
+          "namesVisible": 3
+        },
+        {
+          "id": "cluedo-rooms",
+          "answers": 9,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/topic/Clue-board-game",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Clue-board-game",
+      "questions": [
+        {
+          "id": "cluedo-suspects",
+          "answers": 6,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://instructions.hasbro.com/en-gb/instruction/monopoly-game",
+      "status": 200,
+      "finalUrl": "https://instructions.hasbro.com/en-gb/instruction/monopoly-game",
+      "questions": [
+        {
+          "id": "monopoly-colours",
+          "answers": 8,
+          "namesVisible": 6
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://play.tetris.com/about",
+      "status": 200,
+      "finalUrl": "https://play.tetris.com/about",
+      "questions": [
+        {
+          "id": "tetris-shapes",
+          "answers": 7,
+          "namesVisible": 2
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/topic/dice",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/dice",
+      "questions": [
+        {
+          "id": "dice-opposites",
+          "answers": 3,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.craftyarncouncil.com/standards/knitting-abbreviations",
+      "status": 200,
+      "finalUrl": "https://www.craftyarncouncil.com/standards/knitting-abbreviations",
+      "questions": [
+        {
+          "id": "knitting-stitches",
+          "answers": 33,
+          "namesVisible": 2
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.craftyarncouncil.com/standards/crochet-abbreviations",
+      "status": 200,
+      "finalUrl": "https://www.craftyarncouncil.com/standards/crochet-abbreviations",
+      "questions": [
+        {
+          "id": "crochet-basic-stitches",
+          "answers": 7,
+          "namesVisible": 7
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://origamiusa.org/",
+      "status": 200,
+      "finalUrl": "https://origamiusa.org/",
+      "questions": [
+        {
+          "id": "origami-bases",
+          "answers": 10,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.ons.gov.uk/methodology/geography/ukgeographies",
+      "status": 200,
+      "finalUrl": "https://www.ons.gov.uk/methodology/geography/ukgeographies",
+      "questions": [
+        {
+          "id": "uk-countries",
+          "answers": 4,
+          "namesVisible": 2
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://education.nationalgeographic.org/resource/Continent/",
+      "status": 200,
+      "finalUrl": "https://education.nationalgeographic.org/resource/Continent/",
+      "questions": [
+        {
+          "id": "continents",
+          "answers": 7,
+          "namesVisible": 7
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://oceanservice.noaa.gov/facts/howmanyoceans.html",
+      "status": 200,
+      "finalUrl": "https://oceanservice.noaa.gov/facts/howmanyoceans.html",
+      "questions": [
+        {
+          "id": "oceans",
+          "answers": 5,
+          "namesVisible": 5
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/browse/Geography-Travel",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/browse/Geography-Travel",
+      "questions": [
+        {
+          "id": "uk-capitals",
+          "answers": 4,
+          "namesVisible": 0
+        },
+        {
+          "id": "french-cities",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "italian-cities",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "spanish-cities",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "german-cities",
+          "answers": 42,
+          "namesVisible": 1
+        },
+        {
+          "id": "japanese-cities",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "indian-cities",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "us-cities",
+          "answers": 59,
+          "namesVisible": 0
+        },
+        {
+          "id": "brazilian-cities",
+          "answers": 38,
+          "namesVisible": 0
+        },
+        {
+          "id": "south-american-capitals",
+          "answers": 13,
+          "namesVisible": 0
+        },
+        {
+          "id": "world-rivers",
+          "answers": 67,
+          "namesVisible": 0
+        },
+        {
+          "id": "mountains",
+          "answers": 54,
+          "namesVisible": 0
+        },
+        {
+          "id": "france-neighbours",
+          "answers": 8,
+          "namesVisible": 0
+        },
+        {
+          "id": "landforms",
+          "answers": 51,
+          "namesVisible": 1
+        },
+        {
+          "id": "world-landmarks",
+          "answers": 52,
+          "namesVisible": 0
+        },
+        {
+          "id": "compass-directions",
+          "answers": 8,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/list-of-cities/list-of-cities-html",
+      "status": 200,
+      "finalUrl": "https://www.gov.uk/government/publications/list-of-cities/list-of-cities-html",
+      "questions": [
+        {
+          "id": "uk-cities",
+          "answers": 76,
+          "namesVisible": 73
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html",
+      "status": 200,
+      "finalUrl": "https://www.canada.ca/en/intergovernmental-affairs/services/provinces-territories.html",
+      "questions": [
+        {
+          "id": "canadian-capitals",
+          "answers": 13,
+          "namesVisible": 11
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.australia.com/en/facts-and-planning/about-australia/cities-states-and-territories.html",
+      "status": 200,
+      "finalUrl": "https://www.australia.com/en/facts-and-planning/about-australia/cities-states-and-territories.html",
+      "questions": [
+        {
+          "id": "australian-capitals",
+          "answers": 8,
+          "namesVisible": 8
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_London_boroughs",
+      "status": 200,
+      "finalUrl": "https://en.wikipedia.org/wiki/List_of_London_boroughs",
+      "questions": [
+        {
+          "id": "london-boroughs",
+          "answers": 32,
+          "namesVisible": 32
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.metoffice.gov.uk/weather/learn-about/weather",
+      "status": 200,
+      "finalUrl": "https://weather.metoffice.gov.uk/learn-about/weather",
+      "questions": [
+        {
+          "id": "weather-words",
+          "answers": 40,
+          "namesVisible": 8
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.thebhs.org/information-advice/native-reptiles-and-amphibians",
+      "status": 200,
+      "finalUrl": "https://www.thebhs.org/information-advice/native-reptiles-and-amphibians",
+      "questions": [
+        {
+          "id": "uk-native-amphibians",
+          "answers": 7,
+          "namesVisible": 7
+        },
+        {
+          "id": "uk-native-reptiles",
+          "answers": 6,
+          "namesVisible": 6
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/science/flower",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/science/flower",
+      "questions": [
+        {
+          "id": "flower-whorls",
+          "answers": 4,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/science/leaf",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/science/leaf",
+      "questions": [
+        {
+          "id": "leaf-arrangements",
+          "answers": 3,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.usgs.gov/special-topics/water-science-school/science/water-cycle",
+      "status": 202,
+      "finalUrl": "https://www.usgs.gov/special-topics/water-science-school/science/water-cycle",
+      "questions": [
+        {
+          "id": "water-cycle-processes",
+          "answers": 12,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/science/state-of-matter",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/science/state-of-matter",
+      "questions": [
+        {
+          "id": "states-of-matter",
+          "answers": 4,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/science/sense",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/science/sense",
+      "questions": [
+        {
+          "id": "five-senses",
+          "answers": 5,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.metoffice.gov.uk/weather/learn-about/weather/optical-effects/rainbows",
+      "status": 200,
+      "finalUrl": "https://weather.metoffice.gov.uk/learn-about/weather/optical-effects/rainbows",
+      "questions": [
+        {
+          "id": "rainbow-colours",
+          "answers": 7,
+          "namesVisible": 6
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://science.nasa.gov/earth/earth-atmosphere/earths-atmosphere-a-multi-layered-cake/",
+      "status": 200,
+      "finalUrl": "https://science.nasa.gov/earth/earth-atmosphere/earths-atmosphere-a-multi-layered-cake/",
+      "questions": [
+        {
+          "id": "atmosphere-layers",
+          "answers": 5,
+          "namesVisible": 5
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.bgs.ac.uk/discovering-geology/earth-hazards/earthquakes/what-causes-earthquakes/",
+      "status": 200,
+      "finalUrl": "https://www.bgs.ac.uk/discovering-geology/earth-hazards/earthquakes/what-causes-earthquakes/",
+      "questions": [
+        {
+          "id": "earth-layers",
+          "answers": 4,
+          "namesVisible": 2
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.nobelprize.org/prizes/",
+      "status": 200,
+      "finalUrl": "https://www.nobelprize.org/about-the-nobel-prize/",
+      "questions": [
+        {
+          "id": "nobel-categories",
+          "answers": 6,
+          "namesVisible": 6
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.nhs.uk/tests-and-treatments/blood-groups/",
+      "status": 200,
+      "finalUrl": "https://www.nhs.uk/tests-and-treatments/blood-groups/",
+      "questions": [
+        {
+          "id": "blood-groups",
+          "answers": 8,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/science/tooth",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/science/tooth",
+      "questions": [
+        {
+          "id": "tooth-types",
+          "answers": 4,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.bgs.ac.uk/discovering-geology/rocks-and-minerals/",
+      "status": 200,
+      "finalUrl": "https://www.bgs.ac.uk/discovering-geology/rocks-and-minerals/",
+      "questions": [
+        {
+          "id": "rock-groups",
+          "answers": 3,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.un.org/en/climatechange/what-is-renewable-energy",
+      "status": 200,
+      "finalUrl": "https://www.un.org/en/climatechange/what-is-renewable-energy",
+      "questions": [
+        {
+          "id": "renewable-energy",
+          "answers": 8,
+          "namesVisible": 5
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/browse/Science",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/browse/Science",
+      "questions": [
+        {
+          "id": "lab-equipment",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "measuring-instruments",
+          "answers": 40,
+          "namesVisible": 0
+        },
+        {
+          "id": "everyday-compounds",
+          "answers": 42,
+          "namesVisible": 0
+        },
+        {
+          "id": "science-branches",
+          "answers": 47,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://science.nasa.gov/ems/",
+      "status": 200,
+      "finalUrl": "https://science.nasa.gov/ems/",
+      "questions": [
+        {
+          "id": "electromagnetic-spectrum",
+          "answers": 7,
+          "namesVisible": 7
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://home.cern/science/physics/standard-model",
+      "status": 200,
+      "finalUrl": "https://home.cern/science/physics/standard-model/",
+      "questions": [
+        {
+          "id": "standard-model-quarks",
+          "answers": 6,
+          "namesVisible": 4
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Glossary",
+      "questions": [
+        {
+          "id": "web-browsers",
+          "answers": 36,
+          "namesVisible": 7
+        },
+        {
+          "id": "programming-languages",
+          "answers": 52,
+          "namesVisible": 10
+        },
+        {
+          "id": "file-extensions",
+          "answers": 54,
+          "namesVisible": 24
+        },
+        {
+          "id": "operating-systems",
+          "answers": 44,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html",
+      "status": 200,
+      "finalUrl": "https://www.nintendo.com/en-gb/Hardware/Nintendo-History/Nintendo-History-625945.html",
+      "questions": [
+        {
+          "id": "game-consoles",
+          "answers": 47,
+          "namesVisible": 13
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements",
+      "questions": [
+        {
+          "id": "html-headings",
+          "answers": 6,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods",
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods",
+      "questions": [
+        {
+          "id": "web-request-methods",
+          "answers": 9,
+          "namesVisible": 7
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/",
+      "status": 403,
+      "finalUrl": "https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/",
+      "questions": [
+        {
+          "id": "osi-layers",
+          "answers": 7,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/queries-table-expressions.html",
+      "status": 200,
+      "finalUrl": "https://www.postgresql.org/docs/current/queries-table-expressions.html",
+      "questions": [
+        {
+          "id": "sql-joins",
+          "answers": 7,
+          "namesVisible": 6
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://collection.sciencemuseumgroup.org.uk/",
+      "status": 200,
+      "finalUrl": "https://collection.sciencemuseumgroup.org.uk/",
+      "questions": [
+        {
+          "id": "vehicles",
+          "answers": 50,
+          "namesVisible": 1
+        },
+        {
+          "id": "car-brands",
+          "answers": 61,
+          "namesVisible": 2
+        },
+        {
+          "id": "boat-types",
+          "answers": 46,
+          "namesVisible": 1
+        },
+        {
+          "id": "aircraft-types",
+          "answers": 39,
+          "namesVisible": 0
+        },
+        {
+          "id": "train-types",
+          "answers": 39,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://tfl.gov.uk/maps/track/tube",
+      "status": 200,
+      "finalUrl": "https://tfl.gov.uk/maps/track/tube",
+      "questions": [
+        {
+          "id": "london-tube-lines",
+          "answers": 11,
+          "namesVisible": 9
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "status": 200,
+      "finalUrl": "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "questions": [
+        {
+          "id": "road-sign-shapes",
+          "answers": 5,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.gov.uk/guidance/the-highway-code/light-signals-controlling-traffic",
+      "status": 200,
+      "finalUrl": "https://www.gov.uk/guidance/the-highway-code/light-signals-controlling-traffic",
+      "questions": [
+        {
+          "id": "traffic-light-colours",
+          "answers": 3,
+          "namesVisible": 2
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.gov.uk/driving-licence-categories",
+      "status": 200,
+      "finalUrl": "https://www.gov.uk/driving-licence-categories",
+      "questions": [
+        {
+          "id": "uk-driving-licence-categories",
+          "answers": 20,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.visitlondon.com/traveller-information/travel-to-london/airport",
+      "status": 403,
+      "finalUrl": "https://www.visitlondon.com/traveller-information/travel-to-london/airport",
+      "questions": [
+        {
+          "id": "london-airports",
+          "answers": 6,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/technology/ship",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/technology/ship",
+      "questions": [
+        {
+          "id": "nautical-directions",
+          "answers": 16,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/technology/railroad",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/technology/railroad",
+      "questions": [
+        {
+          "id": "rail-gauges",
+          "answers": 11,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/topic/zodiac",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/zodiac",
+      "questions": [
+        {
+          "id": "zodiac-signs",
+          "answers": 12,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/topic/Chinese-zodiac",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Chinese-zodiac",
+      "questions": [
+        {
+          "id": "chinese-zodiac",
+          "answers": 12,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/topic/Roman-numeral",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Roman-numeral",
+      "questions": [
+        {
+          "id": "roman-numerals",
+          "answers": 7,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://world.new7wonders.com/wonders/",
+      "status": 200,
+      "finalUrl": "https://world.new7wonders.com/wonders/",
+      "questions": [
+        {
+          "id": "new-seven-wonders",
+          "answers": 7,
+          "namesVisible": 7
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/topic/Seven-Wonders-of-the-World",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Seven-Wonders-of-the-World",
+      "questions": [
+        {
+          "id": "ancient-wonders",
+          "answers": 7,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/topic/Santa-Claus",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Santa-Claus",
+      "questions": [
+        {
+          "id": "santa-reindeer",
+          "answers": 9,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.iso.org/iso-4217-currency-codes.html",
+      "status": 403,
+      "finalUrl": "https://www.iso.org/iso-4217-currency-codes.html",
+      "questions": [
+        {
+          "id": "currencies",
+          "answers": 43,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.whitehousehistory.org/collections/president-biographies",
+      "status": 200,
+      "finalUrl": "https://www.whitehousehistory.org/collections/president-biographies",
+      "questions": [
+        {
+          "id": "us-presidents",
+          "answers": 44,
+          "namesVisible": 41
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.theoi.com/Ouranios/Mousai.html",
+      "status": 200,
+      "finalUrl": "https://www.theoi.com/Ouranios/Mousai.html",
+      "questions": [
+        {
+          "id": "greek-muses",
+          "answers": 9,
+          "namesVisible": 9
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/science/precious-metal",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/science/precious-metal",
+      "questions": [
+        {
+          "id": "precious-metals",
+          "answers": 8,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.bipm.org/en/publications/si-brochure",
+      "status": 200,
+      "finalUrl": "https://www.bipm.org/en/publications/si-brochure",
+      "questions": [
+        {
+          "id": "si-base-quantities",
+          "answers": 7,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.thebeatles.com/",
+      "status": 200,
+      "finalUrl": "https://www.thebeatles.com/",
+      "questions": [
+        {
+          "id": "beatles-members",
+          "answers": 4,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.queenonline.com/the_band",
+      "status": 200,
+      "finalUrl": "https://www.queenonline.com/the_band",
+      "questions": [
+        {
+          "id": "queen-members",
+          "answers": 4,
+          "namesVisible": 4
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://abbasite.com/",
+      "status": 200,
+      "finalUrl": "https://abbasite.com/",
+      "questions": [
+        {
+          "id": "abba-members",
+          "answers": 4,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.thespicegirls.com/",
+      "status": 200,
+      "finalUrl": "https://thespicegirls.com/",
+      "questions": [
+        {
+          "id": "spice-girls",
+          "answers": 5,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.onedirectionmusic.com/",
+      "status": 200,
+      "finalUrl": "https://www.onedirectionmusic.com/",
+      "questions": [
+        {
+          "id": "one-direction",
+          "answers": 5,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://takethat.com/",
+      "status": 200,
+      "finalUrl": "https://takethat.com/",
+      "questions": [
+        {
+          "id": "take-that",
+          "answers": 5,
+          "namesVisible": 2
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/S_Club",
+      "status": 200,
+      "finalUrl": "https://en.wikipedia.org/wiki/S_Club",
+      "questions": [
+        {
+          "id": "s-club-members",
+          "answers": 7,
+          "namesVisible": 7
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.beegees.com/",
+      "status": 200,
+      "finalUrl": "https://www.beegees.com/",
+      "questions": [
+        {
+          "id": "bee-gees",
+          "answers": 3,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.thepolice.com/",
+      "status": 200,
+      "finalUrl": "https://thepolice.com/",
+      "questions": [
+        {
+          "id": "police-members",
+          "answers": 3,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/topic/Nirvana-American-rock-group",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Nirvana-American-rock-group",
+      "questions": [
+        {
+          "id": "nirvana-members",
+          "answers": 3,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/topic/the-Rolling-Stones",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/the-Rolling-Stones",
+      "questions": [
+        {
+          "id": "rolling-stones-original",
+          "answers": 6,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.thebeatles.com/albums",
+      "status": 200,
+      "finalUrl": "https://www.thebeatles.com/albums",
+      "questions": [
+        {
+          "id": "beatles-albums",
+          "answers": 42,
+          "namesVisible": 23
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/art/music",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/art/music",
+      "questions": [
+        {
+          "id": "musical-notes",
+          "answers": 7,
+          "namesVisible": 0
+        },
+        {
+          "id": "tempo-markings",
+          "answers": 34,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://philharmonia.co.uk/resources/instruments/",
+      "status": 200,
+      "finalUrl": "https://philharmonia.co.uk/resources/instruments/",
+      "questions": [
+        {
+          "id": "orchestra-families",
+          "answers": 4,
+          "namesVisible": 4
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.disneyanimation.com/films/",
+      "status": 200,
+      "finalUrl": "https://www.disneyanimation.com/films/",
+      "questions": [
+        {
+          "id": "disney-animated-features",
+          "answers": 63,
+          "namesVisible": 22
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.dreamworks.com/movies",
+      "status": 200,
+      "finalUrl": "https://www.dreamworks.com/movies",
+      "questions": [
+        {
+          "id": "dreamworks-films",
+          "answers": 50,
+          "namesVisible": 1
+        },
+        {
+          "id": "shrek-films",
+          "answers": 4,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.harrypotter.com/discover/films",
+      "status": 200,
+      "finalUrl": "https://www.harrypotter.com/discover/films",
+      "questions": [
+        {
+          "id": "harry-potter-films",
+          "answers": 8,
+          "namesVisible": 8
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.starwars.com/films",
+      "status": 200,
+      "finalUrl": "https://www.starwars.com/films",
+      "questions": [
+        {
+          "id": "star-wars-saga",
+          "answers": 9,
+          "namesVisible": 9
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.warnerbros.com/movies/lord-rings-fellowship-ring",
+      "status": 200,
+      "finalUrl": "https://www.warnerbros.com/movies/lord-rings-fellowship-ring",
+      "questions": [
+        {
+          "id": "lotr-films",
+          "answers": 3,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.jurassicworld.com/",
+      "status": 200,
+      "finalUrl": "https://www.jurassicworld.com/",
+      "questions": [
+        {
+          "id": "jurassic-films",
+          "answers": 7,
+          "namesVisible": 4
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.marvel.com/movies",
+      "status": 200,
+      "finalUrl": "https://www.marvel.com/movies",
+      "questions": [
+        {
+          "id": "mcu-films",
+          "answers": 37,
+          "namesVisible": 31
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://princess.disney.com/",
+      "status": 200,
+      "finalUrl": "https://princess.disney.com/",
+      "questions": [
+        {
+          "id": "disney-princesses",
+          "answers": 13,
+          "namesVisible": 13
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
+      "status": 200,
+      "finalUrl": "https://movies.disney.com/snow-white-and-the-seven-dwarfs",
+      "questions": [
+        {
+          "id": "seven-dwarfs",
+          "answers": 7,
+          "namesVisible": 6
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.britannica.com/topic/Friends",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Friends",
+      "questions": [
+        {
+          "id": "friends-six",
+          "answers": 6,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/topic/The-Simpsons",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/The-Simpsons",
+      "questions": [
+        {
+          "id": "simpsons-family",
+          "answers": 5,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.teletubbies.com/",
+      "status": 200,
+      "finalUrl": "https://www.teletubbies.com/",
+      "questions": [
+        {
+          "id": "teletubbies",
+          "answers": 4,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.nick.com/shows/teenage-mutant-ninja-turtles",
+      "status": 200,
+      "finalUrl": "https://www.nick.co.uk/?xrs=PPM-18-10caf1f",
+      "questions": [
+        {
+          "id": "ninja-turtles",
+          "answers": 4,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.cartoonnetwork.co.uk/show/the-powerpuff-girls",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/@cartoonnetworkuk?cbrd=1&ucbcb=1",
+      "questions": [
+        {
+          "id": "powerpuff-girls",
+          "answers": 3,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.pawpatrol.com/",
+      "status": 200,
+      "finalUrl": "https://www.pawpatrol.com/",
+      "questions": [
+        {
+          "id": "paw-patrol-original",
+          "answers": 6,
+          "namesVisible": 6
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.warnerbros.com/brands/scooby-doo",
+      "status": 200,
+      "finalUrl": "https://www.warnerbros.com/brands/scooby-doo",
+      "questions": [
+        {
+          "id": "mystery-inc",
+          "answers": 5,
+          "namesVisible": 5
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.gerryanderson.com/thunderbirds/",
+      "status": 200,
+      "finalUrl": "https://gerryanderson.com/collections/thunderbirds",
+      "questions": [
+        {
+          "id": "thunderbirds-brothers",
+          "answers": 5,
+          "namesVisible": 5
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://muppets.disney.com/",
+      "status": 200,
+      "finalUrl": "https://muppets.disney.com/",
+      "questions": [
+        {
+          "id": "muppet-characters",
+          "answers": 42,
+          "namesVisible": 24
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.bluey.tv/characters/",
+      "status": 200,
+      "finalUrl": "https://www.bluey.tv/characters/",
+      "questions": [
+        {
+          "id": "bluey-household",
+          "answers": 4,
+          "namesVisible": 2
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.harrypotter.com/fact-file/locations/hogwarts",
+      "status": 200,
+      "finalUrl": "https://www.harrypotter.com/fact-file/locations/hogwarts",
+      "questions": [
+        {
+          "id": "hogwarts-houses",
+          "answers": 4,
+          "namesVisible": 4
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.cslewis.com/us/books/",
+      "status": 403,
+      "finalUrl": "https://www.harpercollins.com/pages/cslewis",
+      "questions": [
+        {
+          "id": "narnia-books",
+          "answers": 7,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/topic/Winnie-the-Pooh",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Winnie-the-Pooh",
+      "questions": [
+        {
+          "id": "pooh-animals",
+          "answers": 11,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.tolkienestate.com/writing/the-hobbit/",
+      "status": 200,
+      "finalUrl": "https://www.tolkienestate.com/painting/the-hobbit/",
+      "questions": [
+        {
+          "id": "hobbit-dwarves",
+          "answers": 13,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.tolkienestate.com/writing/the-lord-of-the-rings/",
+      "status": 200,
+      "finalUrl": "https://www.tolkienestate.com/writing/the-lord-of-the-rings/",
+      "questions": [
+        {
+          "id": "ring-fellowship",
+          "answers": 9,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.parliament.uk/documents/visiting/exhibition-events/big-draw-a4-handout.pdf",
+      "status": 403,
+      "finalUrl": "https://www.parliament.uk/documents/visiting/exhibition-events/big-draw-a4-handout.pdf",
+      "questions": [
+        {
+          "id": "uk-patron-saints",
+          "answers": 4,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/browse/Religion",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/browse/Religion",
+      "questions": [
+        {
+          "id": "religious-traditions",
+          "answers": 42,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/topic/Germanic-religion-and-mythology",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/topic/Germanic-religion-and-mythology",
+      "questions": [
+        {
+          "id": "norse-deities",
+          "answers": 40,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/browse/Fables-Folktales",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/browse/Fables-Folktales",
+      "questions": [
+        {
+          "id": "folklore-creatures",
+          "answers": 52,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.britannica.com/art/fairy-tale",
+      "status": 403,
+      "finalUrl": "https://www.britannica.com/art/fairy-tale",
+      "questions": [
+        {
+          "id": "fairy-tales",
+          "answers": 44,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://peterrabbit.com/about/",
+      "status": 200,
+      "finalUrl": "https://peterrabbit.com/about/",
+      "questions": [
+        {
+          "id": "beatrix-potter-tales",
+          "answers": 24,
+          "namesVisible": 5
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.seussville.com/books/",
+      "status": 503,
+      "finalUrl": "https://www.seussville.com/books/",
+      "questions": [
+        {
+          "id": "dr-seuss-books",
+          "answers": 53,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.peterrabbit.com/",
+      "status": 200,
+      "finalUrl": "https://peterrabbit.com/",
+      "questions": [
+        {
+          "id": "peter-rabbit-siblings",
+          "answers": 4,
+          "namesVisible": 4
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.fide.com/",
+      "status": 200,
+      "finalUrl": "https://www.fide.com/",
+      "questions": [
+        {
+          "id": "chess-world-champions",
+          "answers": 21,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.worldaquatics.com/swimming",
+      "status": 200,
+      "finalUrl": "https://www.worldaquatics.com/swimming",
+      "questions": [
+        {
+          "id": "swimming-strokes",
+          "answers": 4,
+          "namesVisible": 2
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.thefa.com/",
+      "status": 200,
+      "finalUrl": "https://www.thefa.com/",
+      "questions": [
+        {
+          "id": "football-positions",
+          "answers": 4,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.nba.com/",
+      "status": 403,
+      "finalUrl": "https://www.nba.com/",
+      "questions": [
+        {
+          "id": "basketball-positions",
+          "answers": 5,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://wpbsa.com/play/",
+      "status": 200,
+      "finalUrl": "https://www.wpbsa.com/gd-clubs/play-ball/",
+      "questions": [
+        {
+          "id": "snooker-colours",
+          "answers": 7,
+          "namesVisible": 4
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.world.rugby/the-game/laws/",
+      "status": 200,
+      "finalUrl": "https://passport.world.rugby/laws-of-the-game/",
+      "questions": [
+        {
+          "id": "rugby-scoring",
+          "answers": 5,
+          "namesVisible": 0
+        },
+        {
+          "id": "rugby-positions",
+          "answers": 16,
+          "namesVisible": 1
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://www.lords.org/mcc/the-laws-of-cricket",
+      "status": 200,
+      "finalUrl": "https://www.lords.org/mcc/about-the-laws-of-cricket",
+      "questions": [
+        {
+          "id": "cricket-dismissals",
+          "answers": 10,
+          "namesVisible": 0
+        },
+        {
+          "id": "cricket-fielding",
+          "answers": 42,
+          "namesVisible": 3
+        }
+      ],
+      "contentReadable": true
+    },
+    {
+      "url": "https://olympics.com/en/sports/",
+      "status": 403,
+      "finalUrl": "https://www.olympics.com/en/sports/",
+      "questions": [
+        {
+          "id": "martial-arts",
+          "answers": 42,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    },
+    {
+      "url": "https://www.itftennis.com/en/",
+      "status": 200,
+      "finalUrl": "https://www.itftennis.com/en/",
+      "questions": [
+        {
+          "id": "tennis-shot-types",
+          "answers": 38,
+          "namesVisible": 0
+        }
+      ],
+      "contentReadable": false
+    }
+  ]
+}

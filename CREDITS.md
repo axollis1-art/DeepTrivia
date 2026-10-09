@@ -26,6 +26,6 @@ Each prompt includes its factual reference, qualifier and review date in `server
 
 ## What “reviewed” means here
 
-The implementation agent curated and reviewed question boundaries, factual membership, aliases and editorial tier assignments during this build. Automated validation additionally checks every canonical/alias match, legal tiers, exactly one gem and source metadata. This is not an independent expert audit of all 4,789 facts, and structural tests cannot certify factual completeness.
+The implementation agent curated and reviewed question boundaries, factual membership, aliases and editorial tier assignments during this build. Automated validation additionally checks every canonical/alias match, legal tiers, exactly one gem and source metadata. This is not an independent expert audit of all 10,126 accepted memberships, and structural tests cannot certify factual completeness.
 
 Several open categories deliberately use non-exhaustive accepted-answer lists and say so in their qualifiers. Some common-name and taxonomic conventions differ between sources. Reports let these be corrected in a later version while preserving active challenge snapshots. Source links can move; some sites reject automated HTTP clients. These limitations must remain visible in future handoffs rather than treating a green schema validator as proof of factual accuracy.

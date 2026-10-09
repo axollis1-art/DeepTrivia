@@ -8,10 +8,23 @@ import {language} from './content-language';
 import {culture} from './content-culture';
 import {film} from './content-film';
 import {sport} from './content-sport';
+import {everydayFood} from './content-everyday-food';
+import {everydayAnimals} from './content-everyday-animals';
+import {everydayHome} from './content-everyday-home';
+import {everydayGeography} from './content-everyday-geography';
+import {everydayScience} from './content-everyday-science';
+import {everydayTechnology} from './content-everyday-technology';
+import {everydayTransport} from './content-everyday-transport';
+import {everydayGeneral} from './content-everyday-general';
+import {everydayEntertainment} from './content-everyday-entertainment';
+import {expandLegacy} from './content-expansion';
+import {everydayExtra} from './content-everyday-extra';
+import {everydaySport} from './content-everyday-sport';
+import {reviewPrompt} from './content-review';
 const un='https://www.un.org/about-us/member-states';
 const rsc='https://periodic-table.rsc.org/';
 const geo='https://unstats.un.org/unsd/methodology/m49/';
-export const bank:Prompt[]=[
+const legacy:Prompt[]=[
  ...geography,...science,...nature,...food,...language,...culture,...film,...sport,
  p('africa','Geography','Name a UN member country in Africa.','UN M49 geographic classification; only UN member states, not territories.',geo,'Egypt|South Africa|Kenya|Nigeria|Morocco|Ghana|Ethiopia|Tunisia|Algeria|Tanzania|Uganda|Zimbabwe|Zambia|Senegal|Cameroon|Angola|Botswana|Rwanda|Mozambique|Madagascar|Sudan|South Sudan|Libya|Namibia|Mali|Niger|Chad|Benin|Togo|Liberia|Sierra Leone|Guinea|Guinea-Bissau|Equatorial Guinea|Gabon|Republic of the Congo^Congo-Brazzaville|Democratic Republic of the Congo^DR Congo^DRC^Congo-Kinshasa|Burkina Faso|Burundi|Malawi|Lesotho|Eswatini^Swaziland|Somalia|Eritrea|Djibouti|Mauritania|The Gambia^Gambia|Mauritius|Seychelles|Cabo Verde^Cape Verde|Comoros|São Tomé and Príncipe^Sao Tome and Principe|Central African Republic^CAR|Côte d’Ivoire^Ivory Coast','São Tomé and Príncipe'),
  p('asia','Geography','Name a UN member country in Asia.','UN M49 classification: includes Türkiye, Cyprus and Russia is excluded (classified in Europe).',geo,'China|India|Japan|Thailand|Vietnam|Indonesia|Malaysia|Singapore|South Korea^Republic of Korea|North Korea^Democratic Peoples Republic of Korea|Pakistan|Bangladesh|Sri Lanka|Nepal|Bhutan|Maldives|Mongolia|Cambodia|Laos^Lao Peoples Democratic Republic|Myanmar^Burma|Philippines|Brunei^Brunei Darussalam|Timor-Leste^East Timor|Kazakhstan|Uzbekistan|Kyrgyzstan|Tajikistan|Turkmenistan|Afghanistan|Iran|Iraq|Saudi Arabia|United Arab Emirates^UAE|Oman|Yemen|Qatar|Bahrain|Kuwait|Jordan|Israel|Lebanon|Syria|Türkiye^Turkey|Cyprus|Armenia|Azerbaijan|Georgia','Timor-Leste'),
@@ -52,3 +65,4 @@ export const bank:Prompt[]=[
  p('athletics-events','Sport','Name an athletics event held at Paris 2024.','Event names; men’s and women’s versions count as the same answer. Distances may be written with or without spaces.','https://worldathletics.org/competitions/olympic-games/paris24','100 metres^100m^100 meters|200 metres^200m^200 meters|400 metres^400m^400 meters|800 metres^800m^800 meters|1500 metres^1500m^1500 meters|5000 metres^5000m^5000 meters|10000 metres^10000m^10000 meters|Marathon|High jump|Long jump|Triple jump|Pole vault|Shot put|Discus throw^Discus|Hammer throw^Hammer|Javelin throw^Javelin|100 metres hurdles^100m hurdles^100 meters hurdles|110 metres hurdles^110m hurdles^110 meters hurdles|400 metres hurdles^400m hurdles^400 meters hurdles|3000 metres steeplechase^3000m steeplechase^Steeplechase|4x100 metres relay^4x100m relay^4x100 relay|4x400 metres relay^4x400m relay^4x400 relay|20 kilometre race walk^20km race walk^20km walk|Marathon race walk mixed relay^Mixed race walk relay|Decathlon|Heptathlon','Marathon race walk mixed relay'),
  p('world-cup-winners','Sport','Name a country that won the men’s FIFA World Cup by 2022.','Winning national teams from 1930 through 2022. West Germany is accepted as Germany.','https://www.fifa.com/en/tournaments/mens/worldcup','Brazil|Germany^West Germany|Argentina|France|Italy|England|Spain|Uruguay','Uruguay'),
 ];
+export const bank:Prompt[]=[...legacy.map(expandLegacy),...everydayFood,...everydayAnimals,...everydayHome,...everydayGeography,...everydayScience,...everydayTechnology,...everydayTransport,...everydayGeneral,...everydayEntertainment,...everydayExtra,...everydaySport].map(reviewPrompt);
